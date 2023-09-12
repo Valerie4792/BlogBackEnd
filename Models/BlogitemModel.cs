@@ -7,8 +7,8 @@ namespace BlogBackEnd.Models
 {
     public class BlogitemModel
     {
-        public int ID{get; set;}
-        public int UserID{get; set;}
+        public int Id{get; set;}
+        public int UserId{get; set;}
         public string? PublisherName{get; set;}
         public string? Title{get; set;}
         public string? Tag {get; set;}
