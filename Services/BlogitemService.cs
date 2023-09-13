@@ -24,39 +24,58 @@ namespace BlogBackEnd.Services
             return result;
         }
 
-        internal bool DeleteBlogItem(BlogitemModel blogDelete)
+        public bool DeleteBlogItem(BlogitemModel BlogDelete)
         {
-            throw new NotImplementedException();
+            _context.Update<BlogitemModel>(BlogDelete);
+            return _context.SaveChanges() != 0;
+
+          
         }
 
-        internal IEnumerable<BlogitemModel> GetAllBlogItems()
+        public IEnumerable<BlogitemModel> GetAllBlogItems()
         {
-            throw new NotImplementedException();
+            return _context.BlogInfo;
         }
 
-        internal IEnumerable<BlogitemModel> GetItemsByCategory()
+      
+
+        public IEnumerable<BlogitemModel> GetItemsByCategory(string Category)
         {
-            throw new NotImplementedException();
+            return _context.BlogInfo.Where(item => item.Category == Category);
         }
 
-        internal IEnumerable<BlogitemModel> GetItemsByCategory(string category)
+        public IEnumerable<BlogitemModel> GetItemsByDate(string Date)
         {
-            throw new NotImplementedException();
+            return _context.BlogInfo.Where(item => item.Date == Date);
         }
 
-        internal IEnumerable<BlogitemModel> GetItemsByDate(string date)
+        public List<BlogitemModel> GetItemsByTag(string Tag)
         {
-            throw new NotImplementedException();
+           List<BlogitemModel>AllBlogsWithTag = new List<BlogitemModel>(); 
+           var allItems = GetAllBlogItems().ToList(); //will return an object of tags {Tag: "tag1", "tag2", "tag3"}
+           for(int i =0; i < allItems.Count; i++){
+            BlogitemModel Item = allItems[i];
+            var itemArr = Item.Tag.Split(','); //{"Tag1", "Tag2"}// .split turned to an array;
+            for(int j = 0; j < itemArr.Length; j++){
+                if(itemArr[j].Contains(Tag)){
+                    AllBlogsWithTag.Add(Item);
+                }
+            }
+           }
+           return AllBlogsWithTag;
+            
         }
 
-        internal List<BlogitemModel> GetItemsByTag(string tag)
+        public bool UpdateBlogItems(BlogitemModel BlogUpdate)
         {
-            throw new NotImplementedException();
+            _context.Update<BlogitemModel>(BlogUpdate);
+            return _context.SaveChanges() != 0;
+            
         }
 
-        internal bool UpdateBlogItems(BlogitemModel blogUpdate)
+        public IEnumerable<BlogitemModel> GetPublishedItems()
         {
-            throw new NotImplementedException();
+           return _context.BlogInfo.Where(item => item.IsPublished);
         }
     }
 }
