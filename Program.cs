@@ -1,6 +1,7 @@
 using BlogBackEnd.Services;
 using BlogBackEnd.Services.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,16 @@ builder.Services.AddScoped<PasswordService>();
 var connectionString = builder.Configuration.GetConnectionString("MyblogString");
 
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(connectionString));
+
+//CORS Policy
+builder.Services.AddCors(options => {
+    options.AddPolicy("BlogPolicy", 
+    builder => {
+        builder.WithOrigins("http://localhost:5175") //the local host is what we grab from the webpage link
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,7 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // app.UseHttpsRedirection();
-
+app.UseCors("BlogPolicy");
 app.UseAuthorization();
 
 app.MapControllers();

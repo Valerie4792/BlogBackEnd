@@ -57,7 +57,7 @@ namespace BlogBackEnd.Services
                 //if true need to create a new instance of our UsserModel
                 UserModel newUser = new UserModel();
                 var newHashedPassword = HashPassword(UserToAdd.Password);
-                // newUser.Id = UserToAdd.Id;
+                newUser.Id = UserToAdd.Id;
                 newUser.Username = UserToAdd.Username;
                 newUser.Salt = newHashedPassword.Salt;
                 newUser.Hash = newHashedPassword.Hash;
