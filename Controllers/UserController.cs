@@ -24,6 +24,16 @@ namespace BlogBackEnd.Controllers
 
          }
 
+        //GetUser by UserName
+
+        [HttpGet("userbyusername/{username}")]
+        public UseridDTO GetUserIdDTOByUsername(string username){
+            return _data.GetUserIdDTOByUsername(username);
+
+        }
+
+
+
          [HttpPost("AddUsers")]
         public bool AddUser(CreateAccountDTO UserToAdd){
             return _data.AddUser(UserToAdd);
