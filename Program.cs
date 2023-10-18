@@ -18,7 +18,7 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(conne
 builder.Services.AddCors(options => {
     options.AddPolicy("BlogPolicy", 
     builder => {
-        builder.WithOrigins("http://localhost:5174") //the local host is what we grab from the webpage link
+        builder.WithOrigins("http://localhost:5173") //the local host is what we grab from the webpage link
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
