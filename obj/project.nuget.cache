@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oA9XawpBDx77OZAKsXii2KqybjbuLQ3OeZcurrxejgBRriIEiloJPojhkZscyu+zsKNbdpc66738qcBDEzcBIQ==",
+  "dgSpecHash": "1659hBbERe1nR3DaPavGPvFuzC/8DNyQeixM7F3jDt7yXAdEqPVPanugWYBDjtQeJaio7jI5nFqhCrm4gGMetA==",
   "success": true,
-  "projectFilePath": "/Users/val/BlogBackEnd/BlogBackEnd.csproj",
+  "projectFilePath": "/Users/val/Documents/CodeStack/Level5/Challenges/myBlogBackEnd/BlogBackEnd.csproj",
   "expectedPackageFiles": [
     "/Users/val/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/val/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

@@ -3926,11 +3926,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/val/BlogBackEnd/BlogBackEnd.csproj",
+      "projectUniqueName": "/Users/val/Documents/CodeStack/Level5/Challenges/myBlogBackEnd/BlogBackEnd.csproj",
       "projectName": "BlogBackEnd",
-      "projectPath": "/Users/val/BlogBackEnd/BlogBackEnd.csproj",
+      "projectPath": "/Users/val/Documents/CodeStack/Level5/Challenges/myBlogBackEnd/BlogBackEnd.csproj",
       "packagesPath": "/Users/val/.nuget/packages/",
-      "outputPath": "/Users/val/BlogBackEnd/obj/",
+      "outputPath": "/Users/val/Documents/CodeStack/Level5/Challenges/myBlogBackEnd/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/val/.nuget/NuGet/NuGet.Config"
