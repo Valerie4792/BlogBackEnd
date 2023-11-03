@@ -14,9 +14,9 @@ namespace BlogBackEnd.Migrations
                 name: "BlogInfo",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserID = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     PublisherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Tag = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -29,7 +29,7 @@ namespace BlogBackEnd.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BlogInfo", x => x.ID);
+                    table.PrimaryKey("PK_BlogInfo", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
